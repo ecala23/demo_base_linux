@@ -5,8 +5,8 @@ default['chef_client_updater']['version'] = '12.19.36'
 #keep default apache page - default fasle
 default['apache']['default_site_enabled'] = true
 #Configures audit-coobook - to run profiles and report back to automate
-default['audit']['fetcher'] = 'chef-automate'
-default['audit']['reporter'] = 'chef-automate'
+default['audit']['fetcher'] = 'chef-server-automate'
+default['audit']['reporter'] = 'chef-server-automate'
 
 default['audit']['profiles'] = [
   {
