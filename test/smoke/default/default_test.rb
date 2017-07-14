@@ -5,14 +5,15 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-unless os.windows?
-  # This is an example test, replace with your own test.
-  describe user('root'), :skip do
-    it { should exist }
-  end
-end
 
 # This is an example test, replace it with your own test.
-describe port(80), :skip do
-  it { should_not be_listening }
+
+
+# describe command('chef-client --version') do
+#   its('stdout') { should cmp /13.2.20/i }
+# end
+
+
+describe command('chef-client --version') do
+  its('stdout') { should cmp /13.1.13/i }
 end
