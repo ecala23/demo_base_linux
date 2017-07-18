@@ -1,3 +1,4 @@
+default['chef_client']['task']['frequency_modifier'] = node['chef_client']['interval'].to_i / 10
 #allow chef-client downgrade(true by default)
 default['chef_client_updater']['prevent_downgrade'] = false
 #change version number - next chef client run will upgrade/downgrade client
@@ -19,3 +20,10 @@ default['chef_client_updater']['prevent_downgrade'] = false
 #     compliance: 'workstation-1/linux-patch-baseline'
 #   }
 # ]
+
+
+# case node['platform_family']
+# when 'windows'
+#   default['chef_client']['task']['frequency_modifier'] = node['chef_client']['interval'].to_i / 10
+# else
+# end
